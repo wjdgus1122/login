@@ -1,7 +1,56 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.wrap{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputWrap{
+    width: 50%;
+    height: 50%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;    
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 input{
+    all: unset;
     width: 100%;
     height: 2rem;
     border-bottom: 1px solid #ccc;
+    margin-bottom: 0.5rem;
+}
+
+.btn{
+    all: unset;
+    width: 50%;
+    height: 1.5rem;
+    background-color: #ccc;
+    border-radius: 0.75rem;
+    color: #1d1d1d;
+    font-size: 12px;
+    font-weight: 900;
+    text-align: center;
 }
 
 /* .id{
