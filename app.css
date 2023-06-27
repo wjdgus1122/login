@@ -21,24 +21,24 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;    
     padding: 2rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-form{
+.textInput{
     width: 100%;
-    height: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    margin-bottom: 1rem;
 }
 
 input{
     all: unset;
-    width: 100%;
+    width: 85%;
     height: 2rem;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 0.5rem;
 }
 
 .btn{
@@ -51,6 +51,7 @@ input{
     font-size: 12px;
     font-weight: 900;
     text-align: center;
+    margin-top: 1rem;
 }
 
 /* .id{
