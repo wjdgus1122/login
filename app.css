@@ -52,6 +52,26 @@ input{
     font-weight: 900;
     text-align: center;
     margin-top: 1rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn:hover{
+    background-color: #1d1d1d;
+    color: #fff;
+}
+
+.SignUpBtn{
+    font-size: 12px;
+    color: #ccc;
+    text-align: end;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.SignUpBtn:hover{
+    color: #1d1d1d;
 }
 
 /* .id{
