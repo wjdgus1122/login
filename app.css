@@ -34,6 +34,11 @@
     margin-bottom: 1rem;
 }
 
+.textInput h3{
+    font-size: 15px;
+    color: #1d1d1d;
+}
+
 input{
     all: unset;
     width: 85%;
@@ -44,14 +49,13 @@ input{
 .btn{
     all: unset;
     width: 50%;
-    height: 1.5rem;
+    height: 25px;
     background-color: #ccc;
     border-radius: 0.75rem;
     color: #1d1d1d;
     font-size: 12px;
     font-weight: 900;
     text-align: center;
-    margin-top: 1rem;
     cursor: pointer;
     transition: 0.5s;
 }
