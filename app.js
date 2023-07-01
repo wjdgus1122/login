@@ -1,4 +1,4 @@
-const loginBtn = document.querySelector(".login");
+const loginBtn = document.querySelector(".SignUpBtn");
 
 loginBtn.addEventListener("click", loginBtnClick());
 
