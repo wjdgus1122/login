@@ -1,29 +1,36 @@
-const { log } = require("console");
+const httpStatus = require("http-status-codes"),
+  htmlContentType = {
+    "Content-Type": "text/html",
+  },
+  routes = {
+    GET: {
+      "/info": (req, res) => {
+        res.writeHead(httpStatus.OK, {
+          "Content-Type": "text/plain",
+        });
+        res.end("Welcome to the Info Page!");
+      },
+    },
+    POST: {},
+  };
 
-const routeResponseMap = {
-  "/info": "<h1>Info Page</h1>",
-  "/contact": "<h1>Contact Us</h1>",
-  "/about": "<h1>Learn More About Us.</h1>",
-  "/hello": "<h1>Say hello by emailing us here</h1>",
-  "/error": "<h1>Sorry the page you are looking for is not here.</h1>",
+exports.handle = (req, res) => {
+  try {
+    if (routes[req.method][req.url]) {
+      routes[req.method][req.url](req, res);
+    } else {
+      res.writeHead(httpStatus.NOT_FOUND, htmlContentType);
+      res.end("<h1>No such file exists</h1>");
+    }
+  } catch (ex) {
+    console.log("error: " + ex);
+  }
 };
 
-const port = 3000,
-  http = require("http"),
-  httpStatus = require("http-status-codes"),
-  app = http.createServer((req, res) => {
-    res.writeHead(httpStatus.OK, {
-      "Content-Type": "text/html",
-    });
+exports.get = (url, action) => {
+  routes["GET"][url] = action;
+};
 
-    if (routeResponseMap[req.url]) {
-      res.end(routeResponseMap[req.url]);
-    } else {
-      setTimeout(() => {
-        res.end("<h1>Welcome!</h1>");
-      }, 2000);
-    }
-  });
-
-app.listen(port);
-console.log(`The server has started and is listening on port number: ${port}`);
+exports.post = (url, action) => {
+  routes["POST"][url] = action;
+};
